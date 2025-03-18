@@ -3,6 +3,10 @@
   box-sizing: border-box;
   font-size: 18px;
 
+  text-decoration: none;
+  text-decoration-line: none;
+  text-decoration-color: none;
+
   padding: 0;
   margin: 0;
 }
@@ -20,7 +24,7 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: whitesmoke;
+  background: #fff;
   padding: .5rem;
   border-radius: .5rem;
   box-shadow: 0 0 .2rem rgba(0, 0, 0, 0.5);
@@ -54,11 +58,20 @@ img{
   width: 100%;
   background-color: #128c7e;
   color: #fff;
-  text-align: center;
+  gap: .5rem;  
+}
+.card-action>*{
   padding: .5rem 0;
+  display: flex;
+  justify-content: center;
+}
+.wsp{
+  flex: 2 2 auto;
+  color: #fff;
   gap: .5rem;
-
-  text-decoration: none;
-  text-decoration-line: none;
-  text-decoration-color: none;
+}
+.share{
+  flex: 1 1 auto;
+  background-color: white;
+  color: #000;
 }

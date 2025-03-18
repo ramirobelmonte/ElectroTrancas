@@ -17,12 +17,13 @@ function sumHtml(item) {
     var pesos = new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS" }).format(item.efectivo);
 
     clone.querySelector('.card').id = base36(item.nombre)
-    
+
     clone.querySelector('.categoria').textContent = item.categoria
     clone.querySelector('.nombre').textContent = item.nombre
     clone.querySelector('.efectivo').textContent = pesos
 
-    clone.querySelector('.card-action').href = 'https://api.whatsapp.com/send?phone=543813343477&text=' + 'Información sobre: ' + item.nombre + ' a precio: ' + pesos
+    clone.querySelector('.card-action>.wsp').href = 'https://api.whatsapp.com/send?phone=543813343477&text=' + 'Información sobre: ' + item.nombre + ' a precio: ' + pesos
+    clone.querySelector('.card-action>.share').href = '#' + base36(item.nombre)
 
     main.appendChild(clone)
 }
