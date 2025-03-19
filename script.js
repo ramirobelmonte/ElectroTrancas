@@ -9,21 +9,6 @@ fetch(request)
 .then((response) => response.json())
 .then((json)=>{
     json.forEach(item => {sumHtml(item)});
-    
-    let a = document.getElementById('share');
-    a.addEventListener('click', async () =>{
-        if (navigator.share) {
-            try {
-                await navigator.share({
-                    title: document.title,
-                    url: url,
-                });
-                console.log('¡URL compartida con éxito!');
-            } catch (error) {
-                console.error('Error al compartir:', error);
-            }
-        }
-    })
 })
 
 function sumHtml(item) {
@@ -31,8 +16,13 @@ function sumHtml(item) {
     
     var pesos = new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS" }).format(item.efectivo);
     
-    clone.querySelector('.card').id = base36(item.nombre)
+    for (const x of item.imagenes) {
+        let imge = document.createElement('img')
+        imge.src = 'https://drive.google.com/thumbnail?id='+ x +'&sz=w1000'
+        clone.querySelector('.slider-container').appendChild(imge)
+    }    
     
+    clone.querySelector('.card').id = base36(item.nombre)
     clone.querySelector('.categoria').textContent = item.categoria
     clone.querySelector('.nombre').textContent = item.nombre
     clone.querySelector('.efectivo').textContent = pesos
