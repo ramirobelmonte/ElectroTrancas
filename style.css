@@ -6,6 +6,9 @@
   text-decoration-line: none;
   text-decoration-color: none;
 
+  border: none;
+  outline: none;
+
   padding: 0;
   margin: 0;
 }
@@ -59,26 +62,24 @@ header{
 }
 .card-action{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
-  background-color: #128c7e;
   color: #fff;
   gap: .5rem;  
+  position: relative;
 }
 .card-action>*{
   padding: .5rem 0;
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: .5rem;
 }
 .wsp{
   flex: 2 2 auto;
+  background-color: #128c7e;
   color: #fff;
-  gap: .5rem;
-}
-.share{
-  flex: 1 1 auto;
-  background-color: white;
-  color: #000;
 }
 .slider-container {
   display: flex;
@@ -98,9 +99,19 @@ header{
 td:nth-child(2) {
   border-right: 1px solid;
 }
-table {
-  text-align: center;
+.content{
+  display: none;
+  position: absolute;
   width: 100%;
+  z-index: 99;
+  border-radius: 1rem;
+  color: #000;
+  text-align: center;
+  bottom: 110%;
+}
+.activado{
+  background: #ffcc00;
+;
 }
 @media (min-width:500px) {
   html{
@@ -109,4 +120,8 @@ table {
   .card{
     flex-basis: calc(100%/4);
   }
+  main{
+    margin: 0 5rem;
+  }
 }
+/* un comentario */
