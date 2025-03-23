@@ -11,6 +11,7 @@
 
   padding: 0;
   margin: 0;
+
 }
 main{
   display: flex;
@@ -24,10 +25,34 @@ body{
 }
 header{
   display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-items: center;
   width: 100%;
   padding: .5rem;
   justify-content: center;
   color: #fff;
+}
+header img{
+  height: 4rem;
+}
+.carga{
+  flex-direction: column;
+  height: 100vh;
+}
+.carga img{
+  height: 8rem;
+  animation: bounce 2s ease infinite;
+}
+@keyframes bounce {
+    70% { transform:translateY(0%); }
+    80% { transform:translateY(-15%); }
+    90% { transform:translateY(0%); }
+    95% { transform:translateY(-7%); }
+    97% { transform:translateY(0%); }
+    99% { transform:translateY(-3%); }
+    100% { transform:translateY(0); }
 }
 .card{
   flex: 1 1 auto;

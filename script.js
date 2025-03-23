@@ -1,6 +1,7 @@
 const url_api = 'https://script.google.com/macros/s/AKfycby6xtHMss9-y8UrrUJslxFSTG1h4gPbWOUfUyRLyQ_3_vuwyTR9YVFXW7IpYjf4C7hkvg/exec';
 
 let main = document.querySelector('main');
+let header = document.querySelector('header');
 let card_template = document.getElementById('card_template').content;
 
 
@@ -22,7 +23,9 @@ async function loaddata() {
                     content.style.display = "table";
                 }
             });
-        } 
+        }
+
+        header.classList.remove('carga');
     })
 }
 
@@ -65,7 +68,7 @@ function base36(str) {
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    loaddata()
+    loaddata();
     }
 )
 // un comentario
