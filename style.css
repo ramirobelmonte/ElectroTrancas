@@ -6,12 +6,17 @@
   text-decoration-line: none;
   text-decoration-color: none;
 
+  list-style: none;
+
   border: none;
   outline: none;
 
   padding: 0;
   margin: 0;
 
+}
+a{
+  color: #fff;
 }
 main{
   display: flex;
@@ -23,7 +28,7 @@ main{
 body{
   background-color: #214478;
 }
-header{
+header, footer{
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: nowrap;
@@ -33,6 +38,7 @@ header{
   padding: .5rem;
   justify-content: center;
   color: #fff;
+  text-align: center;
 }
 header img{
   height: 4rem;
